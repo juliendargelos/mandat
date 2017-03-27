@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @card.title %>
+</p>
+
+<p>
+  <strong>Desc:</strong>
+  <%= @card.desc %>
+</p>
+
+<p>
+  <strong>Budget:</strong>
+  <%= @card.budget %>
+</p>
+
+<p>
+  <strong>Employers:</strong>
+  <%= @card.employers %>
+</p>
+
+<p>
+  <strong>Population:</strong>
+  <%= @card.population %>
+</p>
+<p>
+  <strong>Image:</strong>
+  <%= image_tag @card.image.url(:medium) %>
+</p>
+
+<%= link_to 'Edit', edit_card_path(@card) %> |
+<%= link_to 'Back', cards_path %>
