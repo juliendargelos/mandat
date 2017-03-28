@@ -11,6 +11,20 @@ class CardsController < ApplicationController
       session[:budget_gauge] += @card.budget_oui
       session[:employers_gauge] += @card.employers_oui
       session[:population_gauge] += @card.population_oui
+
+      if session[:played_card].count == @cards.count
+        session[:played_card] = []
+      end
+      if session[:budget_gauge] >= 100
+        session[:budget_gauge] = 100
+      end
+      if session[:population_gauge] >= 100
+        session[:population_gauge] = 100
+      end
+      if session[:employers_gauge] >= 100
+        session[:employers_gauge] = 100
+      end
+
       if session[:played_card].count == @cards.count || (session[:budget_gauge] <= 0 || session[:employers_gauge] <= 0 || session[:population_gauge] <= 0)
         redirect_to  "/gameover"
       else
@@ -19,9 +33,21 @@ class CardsController < ApplicationController
   end
   def non
     @cards_ids = @cards.map{|card| card.id}
-      session[:budget_gauge] -= @card.budget_non
-      session[:employers_gauge] -= @card.employers_non
-      session[:population_gauge] -= @card.population_non
+      session[:budget_gauge] += @card.budget_non
+      session[:employers_gauge] += @card.employers_non
+      session[:population_gauge] += @card.population_non
+      if session[:played_card].count == @cards.count
+        session[:played_card] = []
+      end
+      if session[:budget_gauge] >= 100
+        session[:budget_gauge] = 100
+      end
+      if session[:population_gauge] >= 100
+        session[:population_gauge] = 100
+      end
+      if session[:employers_gauge] >= 100
+        session[:employers_gauge] = 100
+      end
       if session[:played_card].count == @cards.count || (session[:budget_gauge] <= 0 || session[:employers_gauge] <= 0 || session[:population_gauge] <= 0)
         redirect_to  "/gameover"
       else
@@ -34,6 +60,7 @@ class CardsController < ApplicationController
   # GET /cards/1.json
   def show
     session[:played_card] << @card.id
+    session[:score] += 1
   end
 
   # GET /cards/new
