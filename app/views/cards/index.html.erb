@@ -7,9 +7,12 @@
     <tr>
       <th>Title</th>
       <th>Desc</th>
-      <th>Budget</th>
-      <th>Employers</th>
-      <th>Population</th>
+      <th>Budget_oui</th>
+      <th>Employers_oui</th>
+      <th>Population_oui</th>
+      <th>Budget_non</th>
+      <th>Employers_non</th>
+      <th>Population_non</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -19,9 +22,12 @@
       <tr>
         <td><%= card.title %></td>
         <td><%= card.desc %></td>
-        <td><%= card.budget %></td>
-        <td><%= card.employers %></td>
-        <td><%= card.population %></td>
+        <td><%= card.budget_oui %></td>
+        <td><%= card.employers_oui %></td>
+        <td><%= card.population_oui %></td>
+        <td><%= card.budget_non %></td>
+        <td><%= card.employers_non %></td>
+        <td><%= card.population_non %></td>
         <td><%= link_to 'Show', card %></td>
         <td><%= link_to 'Edit', edit_card_path(card) %></td>
         <td><%= link_to 'Destroy', card, method: :delete, data: { confirm: 'Are you sure?' } %></td>
