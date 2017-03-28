@@ -1,4 +1,9 @@
 <p id="notice"><%= notice %></p>
+<p><%= session[:budget_gauge] %> </p>
+<p><%= session[:employers_gauge] %> </p>
+<p><%= session[:population_gauge] %> </p>
+<p><%= session[:played_card] %> </p>
+
 
 <p>
   <strong>Title:</strong>
@@ -42,6 +47,11 @@
   <strong>Image:</strong>
   <%= image_tag @card.image.url(:medium) %>
 </p>
+
+
+<p><%= link_to 'Oui', oui_path(@card) %>| <%= link_to 'Non', non_path(@card) %>  </p>
+
+
 
 <%= link_to 'Edit', edit_card_path(@card) %> |
 <%= link_to 'Back', cards_path %>

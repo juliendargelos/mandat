@@ -1,15 +1,37 @@
 class CardsController < ApplicationController
-  before_action :set_card, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_card, only: [:show,:play, :edit, :update, :destroy,:oui,:non]
+  before_action :set_cards, only: [:index,:oui,:non]
   # GET /cards
   # GET /cards.json
   def index
-    @cards = Card.all
   end
+
+  def oui
+      session[:budget_gauge] += @card.budget_oui
+      session[:employers_gauge] += @card.employers_oui
+      session[:population_gauge] += @card.population_oui
+      if session[:played_card].count == @cards.count || (session[:budget_gauge] <= 0 || session[:employers_gauge] <= 0 || session[:population_gauge] <= 0)
+        redirect_to  "/gameover"
+      else
+      redirect_to action: "show", id: ([*1..@cards.count] - session[:played_card]).sample
+    end
+  end
+  def non
+      session[:budget_gauge] -= @card.budget_non
+      session[:employers_gauge] -= @card.employers_non
+      session[:population_gauge] -= @card.population_non
+      if session[:played_card].count == @cards.count || (session[:budget_gauge] <= 0 || session[:employers_gauge] <= 0 || session[:population_gauge] <= 0)
+        redirect_to  "/gameover"
+      else
+      redirect_to action: "show", id: ([*1..@cards.count] - session[:played_card]).sample
+    end
+  end
+
 
   # GET /cards/1
   # GET /cards/1.json
   def show
+    session[:played_card] << @card.id
   end
 
   # GET /cards/new
@@ -67,8 +89,12 @@ class CardsController < ApplicationController
       @card = Card.find(params[:id])
     end
 
+    def set_cards
+      @cards = Card.all
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def card_params
-      params.require(:card).permit(:title, :desc, :budget_oui, :employers_oui, :population_oui,:budget_non, :employers_non, :population_non,:image)
+      params.require(:card).permit(:title,:desc, :budget_oui, :employers_oui, :population_oui,:budget_non, :employers_non, :population_non,:image)
     end
 end
