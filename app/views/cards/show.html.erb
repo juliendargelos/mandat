@@ -1,59 +1,72 @@
-<p id="notice"><%= notice %></p>
-<h3>Nombres de jours au pouvoir : <%= session[:score] %></h3>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-offset-4 col-md-4 middle">
+      <p class="bg-danger" id="notice"><%= notice %></p>
+      <div class="gauge">
+        <div class="icon budget text-left">
+          <p><%= session[:budget_gauge] %>%</p>
+          <%= image_tag("eco.svg", :alt => "eco feed") %>
+        </div>
+        <div class="icon employer text-center">
+          <p><%= session[:employers_gauge] %>% </p>
+          <%= image_tag("patronnat.svg", :alt => "patronnat feed") %>
+        </div>
+        <div class="icon population text-right">
+          <p><%= session[:population_gauge] %>% </p>
+          <%= image_tag("peuple.svg", :alt => "peuple feed") %>
+        </div>
+      </div>
 
-<p><%= session[:budget_gauge] %> </p>
-<p><%= session[:employers_gauge] %> </p>
-<p><%= session[:population_gauge] %> </p>
-<p><%= session[:played_card] %> </p>
-
-
-<p>
-  <strong>Title:</strong>
-  <%= @card.title %>
-</p>
-
-<p>
-  <strong>Desc:</strong>
-  <%= @card.desc %>
-</p>
-
-<p>
-  <strong>Budget_oui:</strong>
-  <%= @card.budget_oui %>
-</p>
-
-<p>
-  <strong>Employers_oui:</strong>
-  <%= @card.employers_oui %>
-</p>
-
-<p>
-  <strong>Population_oui:</strong>
-  <%= @card.population_oui %>
-</p>
-<p>
-  <strong>Budget_non:</strong>
-  <%= @card.budget_non %>
-</p>
-
-<p>
-  <strong>Employers_non:</strong>
-  <%= @card.employers_non %>
-</p>
-
-<p>
-  <strong>Population_non:</strong>
-  <%= @card.population_non %>
-</p>
-<p>
-  <strong>Image:</strong>
-  <%= image_tag @card.image.url(:medium) %>
-</p>
+      <p class="hidden"><%= session[:played_card] %> </p> <!--  hidden  -->
 
 
-<p><%= link_to 'Oui', oui_path(@card) %>| <%= link_to 'Non', non_path(@card) %>  </p>
+      <div class="card">
+        <p class="image">
+          <%= image_tag @card.image.url(:medium), class: "center-block" %>
+        </p>
+
+        <p class="title text-center">
+          <%= @card.title %>
+        </p>
+        <p class="desc text-center">
+          <%= @card.desc %>
+        </p>
+        <p class="bouton"><%= link_to 'Oui', oui_path(@card), class: "btn btn-lg btn-primary oui" %> <%= link_to 'Non', non_path(@card), class: "btn btn-lg btn-primary non" %>  </p>
+      </div>
+
+      <p class="hidden"> <!--  hidden  -->
+        <strong>Budget_oui:</strong>
+        <%= @card.budget_oui %>
+      </p>
+      <p class="hidden"> <!--  hidden  -->
+        <strong>Employers_oui:</strong>
+        <%= @card.employers_oui %>
+      </p>
+      <p class="hidden"> <!--  hidden  -->
+        <strong>Population_oui:</strong>
+        <%= @card.population_oui %>
+      </p>
+      <p class="hidden"> <!--  hidden  -->
+        <strong>Budget_non:</strong>
+        <%= @card.budget_non %>
+      </p>
+      <p class="hidden"> <!--  hidden  -->
+        <strong>Employers_non:</strong>
+        <%= @card.employers_non %>
+      </p>
+      <p class="hidden"> <!--  hidden  -->
+        <strong>Population_non:</strong>
+        <%= @card.population_non %>
+      </p>
 
 
 
-<%= link_to 'Edit', edit_card_path(@card) %> |
-<%= link_to 'Back', cards_path %>
+    </div>
+
+
+    <div class="col-md-4 right">
+      <h3 class="text-center"> Jour <%= session[:score] %></h3>
+    </div>
+
+  </div>
+</div>

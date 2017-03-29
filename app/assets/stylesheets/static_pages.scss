@@ -1,3 +1,97 @@
 // Place all the styles related to the static_pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@font-face {
+    font-family: 'cabinregular';
+    src: url(asset-path('fonts/cabin-regular-webfont.ttf')) format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'cabinbold';
+    src: url(asset-path('fonts/cabin-bold-webfont.ttf')) format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'quantify';
+    src: url(asset-path('fonts/quantify.ttf')) format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import 'reset';
+
+body {
+  font-family: cabinregular;
+  height: 100vh;
+  min-height: 100%;
+  color: white;
+  background: red; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left top, #FF8963, #FF6F40); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom right, #FF8963, #FF6F40); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom right, #FF8963, #FF6F40); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom right, #FF8963, #FF6F40); /* Standard syntax */
+
+  .container-fluid {
+
+    .row-home {
+
+      margin-top: 45vh;
+      transform: translateY(-50%);
+
+      .center {
+
+        h1 {
+          font-family: quantify;
+          font-size: 64px;
+          text-align: center;
+          padding-bottom: 15px;
+        }
+
+        p{
+          font-family: cabinregular;
+          font-size: 18px;
+          margin: 0 auto;
+          text-align: center;
+          line-height: 20px;
+          height: 140px;
+          width: 390px;
+        }
+
+        .second {
+          font-family: cabinbold;
+          letter-spacing: 1px;
+          height: 60px;
+
+        }
+
+        .col-sm-12 {
+          padding-top: 20px;
+          a{
+            text-decoration: none;
+            font-family: cabinregular;
+            color: white;
+            background-color: #34C8A7;
+            font-size: 24px;
+            margin: 0 auto;
+            border-radius: 100px;
+            text-align: center;
+            padding: 5px 20px 5px 20px;
+            border: 0;
+            &:visited {
+              color: white;
+            }
+            &:hover {
+              color: white;
+            }
+          }
+        }
+      }
+    }
+  }
+}
