@@ -1,24 +1,5 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Mandat.lol
+[![Code Climate](https://codeclimate.com/github/paulbonneau/mandat/badges/gpa.svg)](https://codeclimate.com/github/paulbonneau/mandat)
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Un serious game pour sensibiliser sur la problématique du manque de contrôle des citoyens sur leurs élus
