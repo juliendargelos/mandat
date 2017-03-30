@@ -4,8 +4,8 @@
 
 body {
   font-family: cabinregular;
-  height: 100vh;
-  min-height: 100%;
+
+
   color: white;
   background: red; /* For browsers that do not support gradients */
   background: -webkit-linear-gradient(left top, #FF8963, #FF6F40); /* For Safari 5.1 to 6.0 */
@@ -16,6 +16,7 @@ body {
   .container-fluid {
 
     .row {
+
       margin-top: 3vh;
       .middle {
         padding: 0 30px;
@@ -24,16 +25,16 @@ body {
           display: flex;
           justify-content: space-between;
           padding-bottom: 20px;
-          margin-bottom: 60px;
+          margin-bottom: 50px;
 
           .icon {
-            width: 80px;
-            height: 80px;
+            width: 70px;
+            height: 70px;
 
             p {
               text-align: center;
-              padding-bottom: 15px;
-              font-size: 18px;
+              padding-bottom: 10px;
+              font-size: 14px;
             }
           }
         }
@@ -42,6 +43,12 @@ body {
           background-color: white;
           border-radius: 10px;
           min-height: 400px;
+          -moz-box-shadow: 2px 2px 30px 0px rgba(0, 0, 0, 0.25);
+          -webkit-box-shadow: 2px 2px 30px 0px rgba(0, 0, 0, 0.25);
+          -o-box-shadow: 2px 2px 30px 0px rgba(0, 0, 0, 0.25);
+          box-shadow: 2px 2px 30px 0px rgba(0, 0, 0, 0.25);
+          filter:progid:DXImageTransform.Microsoft.Shadow(color=rgba(0, 0, 0, 0.25), Direction=134, Strength=30);
+
           .image {
             padding: 0 20px;
             transform: translateY(-20px);
@@ -56,17 +63,19 @@ body {
 
           .title {
             color: #FF8963;
-            font-size: 36px;
-            font-family: quantify;
+
+            font-size: 32px;
+            font-family: cabinbold;
 
           }
 
           .desc {
             color: #645F5D;
-            font-size: 18px;
+            font-size: 16px;
             font-family: cabinregular;
             margin-top: 20px;
             min-height: 160px;
+            padding: 20px;
           }
 
           .bouton {
@@ -82,7 +91,7 @@ body {
               color: white;
               width: 100%;
               background-color: #34C8A7;
-              font-size: 24px;
+              font-size: 20px;
               margin: 0 20px;
               border-radius: 100px;
               text-align: center;
