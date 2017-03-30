@@ -12,15 +12,18 @@
  *
  *= require_tree .
  *= require_self
+
  */
 html{
   position: relative;
-
+  min-height: 100%;
 }
 body{
+
+}
+
+.container{
   margin-bottom: 80px;
-
-
 }
 
 footer {
@@ -32,6 +35,7 @@ footer {
   bottom: 0;
   width: 100%;
   .container{
+    margin-bottom: 0;
   a{
     text-decoration: none;
     color: #FFF;
@@ -42,4 +46,80 @@ footer {
       color: #34C8A7;
     }
   }}
+}
+.sign-up-link{
+  margin-bottom: 30px;
+}
+.login-form, .signup-form{
+  background: white;
+  color:#666;
+  font-size: 14px;
+  border-radius: 4px;
+  margin-top: 5px;
+  padding: 20px;
+  label{
+    margin-bottom: 5px;
+  }
+  .form-link {
+    margin-bottom: 4px;
+    a{color: #666;    text-decoration: underline;
+      &hover{
+        color: #444;
+
+      }
+
+    }
+
+
+
+
+  }
+  .actions{
+    text-align: center;
+    margin: 0;
+    position: absolute;
+    top: 285px;
+    left: 50%;
+    transform:translateX(-50%);
+    width: 100%;
+    .btn.btn-default{
+      border-radius: 0 0 4px 4px;
+      width: 100%;
+      color:#FFF;
+      background-color: #34C8A7;
+      border: none;
+      &:hover{
+        background-color: #00907d;
+      }
+    }
+  }
+
+  h2{
+    font-family: quantify;
+    color:#34C8A7;
+    font-size: 22px;
+    text-align: center;
+    margin: 20px 0;
+  }
+}
+
+.btn-social {
+  a{
+    color:#FFF;
+    &hover{
+      text-decoration: none;
+    }
+  }
+
+}
+.social-login{
+  margin-top: 10%;
+  padding: 0;
+}
+
+.signup-form{
+  margin-top: 11%;
+  .actions{
+    top:320px;
+  }
 }

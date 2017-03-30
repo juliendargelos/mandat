@@ -3,24 +3,28 @@
   <head>
     <title>Mandat</title>
     <%= csrf_meta_tags %>
-
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <% if current_user.present? %>
-    Bienvenu <%= current_user.email %>
+    Bienvenu
+    <%= current_user.email %>
     <% end %>
+    <div class="container">
     <%= yield %>
+    </div>
     <footer class="footer">
       <div class="container">
-            <% if current_user.present? %>
+        <% if current_user.present? %>
         <%= link_to "Signout", destroy_user_session_path, method: :delete %>
-            <% else %>
+      <% else %>
         <%= link_to "Sign Up", new_user_registration_path %>
         <%= link_to "Sign In", new_user_session_path %>
-            <% end %></div>
-  </footer>
+        <% end %>
+      </div>
+    </footer>
   </body>
 </html>
