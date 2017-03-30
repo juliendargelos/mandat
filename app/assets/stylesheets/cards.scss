@@ -1,3 +1,76 @@
 // Place all the styles related to the Cards controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.cards {
+  height: 100vh;
+  h2 {
+    font-size: 24px;
+    margin: 10px 0 10px;
+    text-align: center;
+  }
+  .gauge {
+    max-width: 320px;
+    margin: 20px auto 0;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    p {
+      margin-bottom: 10px;
+    }
+    .icon {
+      img {
+        width: 50px;
+        padding-bottom: 20px;
+      }
+    }
+    }
+    .card {
+      margin: 20% auto;
+      max-width: 320px;
+      background: #fff;
+      border-radius: 4px;
+      box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.2);
+      -webkit-box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.2);
+      -moz-box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.2);
+      -o-box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.2);
+      padding: 0 20px 20px 20px;
+      text-align: center;
+
+      .btn {
+        border: 2px solid $green;
+        font-size: 16px;
+        border-radius: 50px;
+        width: 100px;
+        margin: 0 10px;
+        transition: .2s linear;
+        &:visited {
+          background: $green;
+        }
+        &:hover {
+          color: $green;
+          border: 2px solid $green;
+          background: #fff;
+        }
+      }
+      img {
+        position: relative;
+        top: -30px;
+        border-radius: 4px;
+        width: 100%;
+        max-width: 350px;
+      }
+      h1 {
+        color: $orange;
+        font-size: 25px;
+        font-family: cabinbold;
+      }
+      p {
+        color: $text;
+        line-height: 19px;
+        margin: 15px 0 25px;
+      }
+    }
+}
