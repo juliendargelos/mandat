@@ -37,16 +37,18 @@ body {
         .card {
           background-color: white;
           border-radius: 10px;
-          min-height: 400px;
+          min-height: 250px;
           text-align: center;
 
           .placement {
-            transform: translateY(3vh);
+a.btn{
+  margin-bottom: 10px;
+}
             .title {
               color: #FF8963;
               font-size: 36px;
               font-family: quantify;
-              transform: translateY(15vh);
+              padding-top: 20px;
             }
 
             .desc {
@@ -54,29 +56,14 @@ body {
               font-size: 18px;
               font-family: cabinregular;
               margin-top: 20px;
-              transform: translateY(14vh);
-              min-height: 160px;
+
+              min-height: 100px;
             }
 
             .game {
-              transform: translateY(1vh);
+
               .over {
-                text-decoration: none;
-                font-family: cabinregular;
-                color: white;
-                background-color: #34C8A7;
-                font-size: 24px;
-                margin: 0 auto;
-                border-radius: 100px;
-                text-align: center;
-                padding: 5px 20px 5px 20px;
-                border: 0;
-                &:visited {
-                  color: white;
-                }
-                &:hover {
-                  color: white;
-                }
+
               }
             }
           }
@@ -93,6 +80,8 @@ body {
     }
   }
 }
+
+
 @media screen and (max-width : "950px") {
   .right {
     h3 {

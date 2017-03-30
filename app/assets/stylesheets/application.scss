@@ -128,3 +128,13 @@ footer {
     top:320px;
   }
 }
+.btn.btn-default.btn-green{
+  background-color: #34C8A7;
+  color:#fff;
+  outline: none;
+  border: none;
+  &hover{
+    color:#fff;
+    background: red;
+  }
+}

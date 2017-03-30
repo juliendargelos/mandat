@@ -21,10 +21,13 @@
         <div class="placement">
           <h1 class="title">Game over !</h1>
           <h3 class="desc">Vous êtes resté au pouvoir : <%= session[:score] %></h3>
+        <a href="https://goo.gl/forms/S0uj0H0mvLyYamRm1" class="btn btn-default btn-green" target="_blank">Aidez-nous à améliorer Mandat !</a>
           <div class="game">
-            <%= link_to 'Rejouer', root_path, class:"over " %>
+            <%= link_to 'Rejouer', root_path, class:"btn btn-default btn-green" %>
           </div>
+
         </div>
+
       </div>
     </div>
 
