@@ -1,5 +1,10 @@
 <div class="cards">
   <div class="row">
+    <div class="col-xs-12 col-sm-2 col-sm-offset-8 col-md-2 col-md-offset-8 ">
+      <h2>Mois <%= session[:score] %></h2>
+    </div>
+  </div>
+  <div class="row">
     <div class="col-xs-12 col-sm-4 col-sm-offset-4 col-md-4 col-md-offset-4">
       <p class="bg-danger" id="notice"><%= notice %></p>
         <div class="gauge">
@@ -17,9 +22,7 @@
         </div>
       </div>
     </div>
-    <div class="col-xs-12 col-sm-2 col-sm-offset-2 col-md-2 col-md-offset-2 ">
-      <h2>Mois <%= session[:score] %></h2>
-    </div>
+
   </div>
 
       <p class="hidden"><%= session[:played_card] %> </p> <!--  hidden  -->
