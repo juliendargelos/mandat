@@ -6,7 +6,7 @@
 </div>
 <div class="row ">
   <%= form_for(resource, as: resource_name, url: session_path(resource_name), html:{class: "col-md-4 col-md-offset-4 col-xs-10 col-xs-offset-1 vcenter login-form"}) do |f| %>
-  <h2>Se connecter</h2>
+  <h2 class="text-center">Se connecter</h2>
   <div class="form-group">
     <%= f.label :email %><br/>
     <%= f.email_field :email, autofocus: true, class: "form-control"%>
@@ -23,14 +23,14 @@
     <%= f.label :remember_me, class: "form-check-label" do %>
 
     <%= f.check_box :remember_me, class: "form-check-input" %>
-    Remember me
+    Se rappeler
     <% end %>
   </div>
   <% end -%>
 
   <div class="form-link">  <%= render "devise/shared/links" %></div>
   <div class="actions">
-    <%= f.submit "Log in", class: "btn btn-default" %>
+    <%= f.submit "Se connecter", class: "btn btn-default btn-green center-block" %>
   </div>
   <% end %>
 </div>

@@ -1,0 +1,45 @@
+.social-login {
+  margin-bottom: 5px;
+  padding: 0;
+  margin-top: 10px;
+
+  a {
+    color: #FFF;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+#new_user {
+
+  background-color: #FFF;
+  border-radius: 5px;
+  color: $text;
+  padding: 20px;
+  position: relative;
+  h2 {
+    color: $green;
+    font-family: cabinbold;
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  .form-check-label,.form-link, label{
+    margin-bottom: 8px;
+  }
+  .btn-green{
+    color:#FFF;
+    width: 100%;
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    right: 0;
+    border-radius:0 0 5px 5px;
+  }
+}
+.signup-form{
+  margin-top: 40px;
+
+}
