@@ -1,0 +1,17 @@
+.btn-green{
+  background-color: $green;
+  border:none;
+  &:hover{
+    background: $darkest-green;
+    border: none;
+  }
+  &:active{
+    background: $darkest-green;
+  }
+  &:focus{
+    background: $darkest-green;
+  }
+  &:visited{
+    background: $green;
+  }
+}
