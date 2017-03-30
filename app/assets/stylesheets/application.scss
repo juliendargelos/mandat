@@ -45,7 +45,12 @@ footer {
       text-decoration: none;
       color: #34C8A7;
     }
-  }}
+    &:visited {
+      color: white;
+    }
+  }
+
+  }
 }
 .sign-up-link{
   margin-bottom: 30px;
