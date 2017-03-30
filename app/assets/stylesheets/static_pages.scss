@@ -49,22 +49,22 @@ body {
           font-family: quantify;
           font-size: 64px;
           text-align: center;
-          padding-bottom: 15px;
+          padding-bottom: 1em;
         }
 
         p{
           font-family: cabinregular;
-          font-size: 18px;
+          font-size: 16px;
           margin: 0 auto;
           text-align: center;
+          line-height: 2px;
           line-height: 20px;
-          height: 140px;
+          height: 100px;
           width: 390px;
         }
 
         .second {
           font-family: cabinbold;
-          letter-spacing: 1px;
           height: 60px;
 
         }
@@ -76,7 +76,7 @@ body {
             font-family: cabinregular;
             color: white;
             background-color: #34C8A7;
-            font-size: 24px;
+            font-size: 20px;
             margin: 0 auto;
             border-radius: 100px;
             text-align: center;
