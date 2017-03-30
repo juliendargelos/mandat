@@ -1,4 +1,5 @@
 class CardsController < ApplicationController
+  before_filter :verify_is_admin, only: [:edit,:update,:destroy,:index,:create,:new]
   before_action :set_card, only: [:show,:play, :edit, :update, :destroy,:oui,:non]
   before_action :set_cards, only: [:index,:oui,:non]
   # GET /cards
