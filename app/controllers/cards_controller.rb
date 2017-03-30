@@ -9,8 +9,6 @@ class CardsController < ApplicationController
   def oui
     @cards_ids = @cards.ids
 
-    session[:budget_gauge] = @game.budget_gauge
-
     session[:budget_gauge] += @card.budget_oui
     session[:employers_gauge] += @card.employers_oui
     session[:population_gauge] += @card.population_oui
