@@ -8,15 +8,15 @@
     <div class="col-xs-12 col-sm-4 col-sm-offset-4 col-md-4 col-md-offset-4">
       <p class="bg-danger" id="notice"><%= notice %></p>
         <div class="gauge">
-          <div class="icon budget text-center">
+          <div class="icon budget text-center" title="Indique la bonne santé de votre budget">
             <p><%= session[:budget_gauge] %>%</p>
                 <%= image_tag("eco.svg", :alt => "eco feed") %>
           </div>
-          <div class="icon employer text-center">
+          <div class="icon employer text-center" title="Indique l'état de vos relations avec le patronnat">
             <p><%= session[:employers_gauge] %>% </p>
             <%= image_tag("patronnat.svg", :alt => "patronnat feed") %>
           </div>
-            <div class="icon population text-center">
+            <div class="icon population text-center" title="Indique votre cote de populatité auprès du peuple">
             <p><%= session[:population_gauge] %>% </p>
             <%= image_tag("peuple.svg", :alt => "peuple feed") %>
         </div>
