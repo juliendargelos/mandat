@@ -1,0 +1,23 @@
+@import "colors";
+@import "buttons";
+@import "fonts";
+@import "cards";
+@import "gameover";
+@import "static_pages";
+@import "footer";
+
+// Generic code
+
+/* Sticky footer */
+html{
+  position: relative;
+    min-height: 100%;
+}
+body{
+  font-family:cabinregular;
+  font-size: 14px;
+}
+
+.wrapper{
+  padding-bottom: 200px;
+}

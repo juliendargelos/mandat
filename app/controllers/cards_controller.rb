@@ -7,32 +7,35 @@ class CardsController < ApplicationController
   end
 
   def oui
-    @cards_ids = @cards.map{|card| card.id}
-      session[:budget_gauge] += @card.budget_oui
-      session[:employers_gauge] += @card.employers_oui
-      session[:population_gauge] += @card.population_oui
+    @cards_ids = @cards.ids
 
-      if session[:played_card].count == @cards.count
-        session[:played_card] = []
-      end
-      if session[:budget_gauge] >= 100
-        session[:budget_gauge] = 100
-      end
-      if session[:population_gauge] >= 100
-        session[:population_gauge] = 100
-      end
-      if session[:employers_gauge] >= 100
-        session[:employers_gauge] = 100
-      end
+    session[:budget_gauge] = @game.budget_gauge
 
-      if session[:played_card].count == @cards.count || (session[:budget_gauge] <= 0 || session[:employers_gauge] <= 0 || session[:population_gauge] <= 0)
-        redirect_to  "/gameover"
-      else
+    session[:budget_gauge] += @card.budget_oui
+    session[:employers_gauge] += @card.employers_oui
+    session[:population_gauge] += @card.population_oui
+
+    if session[:played_card].count == @cards.count
+      session[:played_card] = []
+    end
+    if session[:budget_gauge] >= 100
+      session[:budget_gauge] = 100
+    end
+    if session[:population_gauge] >= 100
+      session[:population_gauge] = 100
+    end
+    if session[:employers_gauge] >= 100
+      session[:employers_gauge] = 100
+    end
+
+    if session[:played_card].count == @cards.count || (session[:budget_gauge] <= 0 || session[:employers_gauge] <= 0 || session[:population_gauge] <= 0)
+      redirect_to  "/gameover"
+    else
       redirect_to action: "show", id: (@cards_ids - session[:played_card]).sample
     end
   end
   def non
-    @cards_ids = @cards.map{|card| card.id}
+    @cards_ids = @cards.ids
       session[:budget_gauge] += @card.budget_non
       session[:employers_gauge] += @card.employers_non
       session[:population_gauge] += @card.population_non

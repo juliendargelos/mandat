@@ -1,98 +1,135 @@
 // Place all the styles related to the static_pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-@font-face {
-    font-family: 'cabinregular';
-    src: url(asset-path('fonts/cabin-regular-webfont.ttf')) format('woff2');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'cabinbold';
-    src: url(asset-path('fonts/cabin-bold-webfont.ttf')) format("truetype");
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'quantify';
-    src: url(asset-path('fonts/quantify.ttf')) format("truetype");
-    font-weight: normal;
-    font-style: normal;
-}
-
-@import "bootstrap-sprockets";
-@import "bootstrap";
-@import 'reset';
-@import 'bootstrap-social';
-@import 'font-awesome';
 
 body {
-  font-family: cabinregular;
-
   color: white;
-  background: red; /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(left top, #FF8963, #FF6F40); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(bottom right, #FF8963, #FF6F40); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(bottom right, #FF8963, #FF6F40); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(to bottom right, #FF8963, #FF6F40); /* Standard syntax */
+  background: red;
+  background: -webkit-linear-gradient(left top, #FF8963, #FF6F40);
+  background: -o-linear-gradient(bottom right, #FF8963, #FF6F40);
+  background: -moz-linear-gradient(bottom right, #FF8963, #FF6F40);
+  background: linear-gradient(to bottom right, #FF8963, #FF6F40);
+}
 
-  .container-fluid {
+.slide-1{
+  margin-bottom: 100px;
+}
+.slide-2{
+  margin-bottom: 100px;
+  .card{
 
-    .row-home {
+    img{
+      margin-bottom: 25px;
+    }
+    line-height: 18px;
+    min-height: 185px;
+    max-width: 290px;
+    padding: 20px;
+    color:$text;
+    background-color: #FFF;
+    border-radius: 4px;
+    box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.2);
+    -webkit-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.2);
+    -o-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.2);
+  }
+}
 
-      margin-top: 45vh;
-      transform: translateY(-50%);
+@media (max-width: 845px){
+.card{
+  margin-bottom: 30px;
+}
+}
+.slide-3{
+  .slide-title{
+    font-size: 20px;
+    margin-bottom: 40px;
+  }
+  .text-right{
+    text-align: left;
+  }
+  .text-left{
+    text-align: right;
+  }
+  img{
+    max-height: 440px;
+  }
+  .cta{
+    max-width: 150px;
+    margin-top: 40px;
+  }
 
-      .center {
+}
 
-        h1 {
-          font-family: quantify;
-          font-size: 64px;
-          text-align: center;
-          padding-bottom: 1em;
-        }
+.cta {
 
-        p{
-          font-family: cabinregular;
-          font-size: 16px;
-          margin: 0 auto;
-          text-align: center;
-          line-height: 2px;
-          line-height: 20px;
-          height: 100px;
-          width: 390px;
-        }
+  border-radius: 20px;
+  font-size: 16px;
+  margin-top: 10px;
+  box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.2);
+  -webkit-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.2);
+  -o-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.2);
+}
 
-        .second {
-          font-family: cabinbold;
-          height: 60px;
+.home {
+  .navbar {
+    background: none;
+    border: none;
 
-        }
+    .cta {
+      padding: 6px 24px;
 
-        .col-sm-12 {
-          padding-top: 20px;
-          a{
-            text-decoration: none;
-            font-family: cabinregular;
-            color: white;
-            background-color: #34C8A7;
-            font-size: 20px;
-            margin: 0 auto;
-            border-radius: 100px;
-            text-align: center;
-            padding: 5px 20px 5px 20px;
-            border: 0;
-            &:visited {
-              color: white;
-            }
-            &:hover {
-              color: white;
-            }
-          }
-        }
+    }
+
+    li a {
+      color: #FFF;
+
+      &hover {
+        text-decoration: none;
       }
     }
+  }
+
+  h1 {
+    padding-top: 25%;
+    font-size: 0;
+    margin-bottom: 20px;
+  }
+
+  .presentation {
+    font-size: 16px;
+    line-height: 22px;
+    margin-bottom: 20px;
+  }
+}
+
+// Mise en forme du menu / overide de styles bootstrap
+
+.navbar-default .navbar-nav > li > a.cta:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  background-color: $darkest-green;
+  color: white;
+}
+
+.navbar-default .navbar-nav > li > a:focus,
+.navbar-default .navbar-nav > li > a:hover {
+  color: white;
+}
+
+.navbar-default .navbar-toggle:focus,
+.navbar-default .navbar-toggle:hover {
+  background-color: rgba(0,0, 0,0.1);
+}
+
+.navbar-default .navbar-toggle {
+  border-color: #FFF;
+
+  &hover {
+    background-color: #FFF;
+  }
+
+  .icon-bar {
+    background-color: #FFF;
   }
 }

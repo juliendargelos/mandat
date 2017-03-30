@@ -16,20 +16,20 @@
     Bienvenu
     <%= current_user.email %>
     <% end %>
-    <div class="container">
+    <div class="container wrapper">
     <%= yield %>
     </div>
     <footer class="footer">
+      <div class="col-xs-12 col-sm-4 col-sm-offset-4 col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-4">
+        <p class="text-center">Votre avis nous intéresse !</p>
+        <p class="text-center">Remplissez <a href="https://goo.gl/forms/S0uj0H0mvLyYamRm1">ce formulaire</a> afin de nous aider à améliorer Mandat.</p>
+<div class="social-container">
 
-      <div class="container">
-        <% if current_user.present? %>
-        <%= link_to "Signout", destroy_user_session_path, method: :delete %>
-      <% else %>
-        <%= link_to "Sign Up", new_user_registration_path %>
-        <%= link_to "Sign In", new_user_session_path %>
-
-        <% end %>
+          <div class="social-item"><i class="fa fa-facebook"></i><a href="https://www.facebook.com/mandat.lejeu">Facebook</a></div>
+          <div class="social-item"><i class="fa fa-twitter"></i><a href="https://twitter.com/mandat_lejeu">Twitter</a></div>
+</div>
       </div>
+
     </footer>
 
   </body>
