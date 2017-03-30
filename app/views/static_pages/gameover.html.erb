@@ -1,3 +1,37 @@
-<h1>Game over</h1>
-<h3>Vous êtes resté au pouvoir : <%= session[:score] %></h3>
-<%= link_to 'Return to home', root_path %>
+<div class="container-fluid gameover">
+  <div class="row">
+    <div class="col-md-offset-4 col-md-4 middle">
+      <p class="bg-danger" id="notice"><%= notice %></p>
+      <div class="gauge">
+        <div class="icon budget text-left">
+          <p><%= session[:budget_gauge] %>%</p>
+          <%= image_tag("eco.svg", :alt => "eco feed") %>
+        </div>
+        <div class="icon employer text-center">
+          <p><%= session[:employers_gauge] %>% </p>
+          <%= image_tag("patronnat.svg", :alt => "patronnat feed") %>
+        </div>
+        <div class="icon population text-right">
+          <p><%= session[:population_gauge] %>% </p>
+          <%= image_tag("peuple.svg", :alt => "peuple feed") %>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="placement">
+          <h1 class="title">Game over !</h1>
+          <h3 class="desc">Vous êtes resté au pouvoir : <%= session[:score] %></h3>
+          <div class="game">
+            <%= link_to 'Rejouer', root_path, class:"over " %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-md-4 right">
+      <h3 class="text-center"> Jour <%= session[:score] %></h3>
+    </div>
+
+  </div>
+</div>

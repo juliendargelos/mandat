@@ -58,6 +58,7 @@ body {
             color: #FF8963;
             font-size: 36px;
             font-family: quantify;
+
           }
 
           .desc {
@@ -103,10 +104,47 @@ body {
           font-size: 32px;
           padding-left: 30px;
         }
+        // .mod {
+        //   width: 0;
+        //   .intero {
+        //     height: 0;
+        //     width: 0;
+        //     padding: 0;
+        //     margin: 0;
+        //     border: 0;
+        //     outline: none;
+        //       img {
+        //         height: 60px;
+        //         width: 60px;
+        //         border: none;
+        //       }
+        //
+        //     }
+        //   }
+        //
+        //
+        // //
+        }
       }
     }
   }
-}
+  // .modal-header h4{
+  //   color: #FF8963;
+  //   font-size: 18px;
+  //   font-family: quantify;
+  // }
+  // .modal-header .croix{
+  //   border: 1px solid grey;
+  //   border-radius: 5px;
+  //   padding: 0px 5px 2px 5px;
+  //   outline: none;
+  // }
+  // .modal-body p {
+  //   color: #645F5D;
+  //   font-size: 14px;
+  //   font-family: cabinregular;
+  // }
+
 @media screen and (max-width : "950px") {
   .right {
     h3 {
