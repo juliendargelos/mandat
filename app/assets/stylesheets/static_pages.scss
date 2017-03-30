@@ -11,65 +11,70 @@ body {
   background: linear-gradient(to bottom right, #FF8963, #FF6F40);
 }
 
-.slide-1{
+.slide-1 {
   margin-bottom: 100px;
 }
-.slide-2{
-  margin-bottom: 100px;
-  .card{
 
-    img{
+.slide-2 {
+  margin-bottom: 100px;
+
+  .card {
+    img {
       margin-bottom: 25px;
     }
     line-height: 18px;
     min-height: 185px;
     max-width: 290px;
     padding: 20px;
-    color:$text;
+    color: $text;
     background-color: #FFF;
     border-radius: 4px;
-    box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.2);
-    -webkit-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.2);
-    -moz-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.2);
-    -o-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.2);
+    box-shadow: 0 0 5px 1px rgba(0,0,0,0.2);
+    -webkit-box-shadow: 0 0 5px 1px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0 0 5px 1px rgba(0,0,0,0.2);
+    -o-box-shadow: 0 0 5px 1px rgba(0,0,0,0.2);
   }
 }
+@media (max-width: 845px) {
+  .card {
+    margin-bottom: 30px;
+  }
 
-@media (max-width: 845px){
-.card{
-  margin-bottom: 30px;
+
 }
-}
-.slide-3{
-  .slide-title{
+
+.slide-3 {
+  .slide-title {
     font-size: 20px;
     margin-bottom: 40px;
   }
-  .text-right{
+
+  .text-right {
     text-align: left;
   }
-  .text-left{
+
+  .text-left {
     text-align: right;
   }
-  img{
+
+  img {
     max-height: 440px;
   }
-  .cta{
+
+  .cta {
     max-width: 150px;
     margin-top: 40px;
   }
-
 }
 
 .cta {
-
   border-radius: 20px;
   font-size: 16px;
   margin-top: 10px;
-  box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.2);
-  -webkit-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.2);
-  -moz-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.2);
-  -o-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.2);
+  box-shadow: 0 0 5px 1px rgba(0,0,0,0.2);
+  -webkit-box-shadow: 0 0 5px 1px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0 0 5px 1px rgba(0,0,0,0.2);
+  -o-box-shadow: 0 0 5px 1px rgba(0,0,0,0.2);
 }
 
 .home {
@@ -79,7 +84,6 @@ body {
 
     .cta {
       padding: 6px 24px;
-
     }
 
     li a {
@@ -103,9 +107,7 @@ body {
     margin-bottom: 20px;
   }
 }
-
 // Mise en forme du menu / overide de styles bootstrap
-
 .navbar-default .navbar-nav > li > a.cta:hover,
 .navbar-default .navbar-nav > li > a:focus {
   background-color: $darkest-green;
@@ -132,4 +134,26 @@ body {
   .icon-bar {
     background-color: #FFF;
   }
+}
+@media (max-width: 845px) {
+  .navbar-collapse {
+    text-align: center;
+    .cta {
+      box-shadow: 0 0 0 0 #000;
+      background: none;
+    }
+
+    .btn-green:visited {
+      background: none;
+    }
+
+  }
+
+  .navbar-default .navbar-nav > li > a.cta:hover, .navbar-default .navbar-nav > li > a:focus{
+    background: none;
+  }
+  .navbar-default .navbar-collapse, .navbar-default .navbar-form{
+    border:none;
+  }
+
 }

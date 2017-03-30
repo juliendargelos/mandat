@@ -1,3 +1,5 @@
+
+
 .social-login {
   margin-bottom: 5px;
   padding: 0;
@@ -31,15 +33,33 @@
   }
   .btn-green{
     color:#FFF;
+
     width: 100%;
     position: absolute;
     bottom: -15px;
     left: 0;
     right: 0;
     border-radius:0 0 5px 5px;
+    &:hover{
+      color: #FFF;
+      background-color: darken($green,10%);
+    }
   }
 }
 .signup-form{
-  margin-top: 40px;
+  margin-top: 30px;
 
+}
+
+.return{
+  color: #FFF;
+  border-radius: 20px;
+  margin-top: 15px;
+  i{
+    margin-right: 8px;
+  }
+  &:hover{
+    color: #FFF;
+    background-color: darken($green,10%);
+  }
 }

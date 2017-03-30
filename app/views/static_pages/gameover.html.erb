@@ -1,40 +1,33 @@
-<div class="container-fluid gameover">
-  <div class="row">
-    <div class="col-md-offset-4 col-md-4 middle">
-      <p class="bg-danger" id="notice"><%= notice %></p>
-      <div class="gauge">
-        <div class="icon budget text-left">
-          <p><%= session[:budget_gauge] %>%</p>
-          <%= image_tag("eco.svg", :alt => "eco feed") %>
-        </div>
-        <div class="icon employer text-center">
-          <p><%= session[:employers_gauge] %>% </p>
-          <%= image_tag("patronnat.svg", :alt => "patronnat feed") %>
-        </div>
-        <div class="icon population text-right">
-          <p><%= session[:population_gauge] %>% </p>
-          <%= image_tag("peuple.svg", :alt => "peuple feed") %>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="placement">
-          <h1 class="title">Game over !</h1>
-          <h3 class="desc">Vous êtes resté au pouvoir : <%= session[:score] %></h3>
-        <a href="https://goo.gl/forms/S0uj0H0mvLyYamRm1" class="btn btn-default btn-green" target="_blank">Aidez-nous à améliorer Mandat !</a>
-          <div class="game">
-            <%= link_to 'Rejouer', root_path, class:"btn btn-default btn-green" %>
+<div class="gameover">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-4 col-md-offset-4">
+        <p class="bg-danger" id="notice"><%= notice %></p>
+        <div class="gauge">
+          <div class="icon budget text-center">
+            <p><%= session[:budget_gauge] %>%</p>
+            <%= image_tag("eco.svg", :alt => "eco feed") %>
           </div>
-
+          <div class="icon employer text-center">
+            <p><%= session[:employers_gauge] %>% </p>
+            <%= image_tag("patronnat.svg", :alt => "patronnat feed") %>
+          </div>
+          <div class="icon population text-center">
+            <p><%= session[:population_gauge] %>% </p>
+            <%= image_tag("peuple.svg", :alt => "peuple feed") %>
+          </div>
         </div>
-
       </div>
     </div>
-
-
-    <div class="col-md-4 right">
-      <h3 class="text-center"> Jour <%= session[:score] %></h3>
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-4 col-md-offset-4">
+        <div class="card">
+          <h1 class="title text-center">Game over !</h1>
+          <h3 class="text-center">Vous êtes resté au pouvoir : <%= session[:score] %> mois</h3>
+          <a href="https://goo.gl/forms/S0uj0H0mvLyYamRm1" class="btn btn-lg btn-primary btn-green center-block haut" target="_blank">Aidez-nous à améliorer Mandat !</a>
+          <%= link_to 'Rejouer', root_path, class:"btn btn-lg btn-primary btn-green center-block bas" %>
+        </div>
+      </div>
     </div>
-
   </div>
 </div>
