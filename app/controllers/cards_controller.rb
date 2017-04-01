@@ -1,13 +1,21 @@
 class CardsController < ApplicationController
   before_filter :verify_is_admin, only: [:edit,:update,:destroy,:index,:create,:new]
-  before_action :set_card, only: [:show,:play, :edit, :update, :destroy,:oui,:non]
+  before_action :set_card, only: [:show, :edit, :update, :destroy]
   before_action :set_cards, only: [:index,:oui,:non]
+  before_action :set_data
   # GET /cards
   # GET /cards.json
   def index
   end
 
   def oui
+    if session[:played_card].last.nil?
+        redirect_to root_path
+        return false
+    end
+
+    @card = Card.find session[:played_card].last
+
     @cards_ids = @cards.ids
 
     session[:budget_gauge] += @card.budget_oui
@@ -28,17 +36,37 @@ class CardsController < ApplicationController
     end
 
     if session[:played_card].count == @cards.count || (session[:budget_gauge] <= 0 || session[:employers_gauge] <= 0 || session[:population_gauge] <= 0)
-      redirect_to  "/gameover"
+      @score = session[:score]
+      {
+        budget_gauge: 50,
+        employers_gauge: 50,
+        population_gauge: 50,
+        played_card: [],
+        score: 0
+      }.each { |data, value| session[data] = value }
+
+      render 'static_pages/gameover'
     else
-      redirect_to action: "show", id: (@cards_ids - session[:played_card]).sample
+      next_card = (@cards_ids - session[:played_card]).sample
+      session[:played_card] << next_card
+      session[:score] += 1
+      redirect_to action: "show", id: next_card
     end
   end
   def non
+    if session[:played_card].last.nil?
+        redirect_to root_path
+        return false
+    end
+
+    @card = Card.find session[:played_card].last
+
     @cards_ids = @cards.ids
       session[:budget_gauge] += @card.budget_non
       session[:employers_gauge] += @card.employers_non
       session[:population_gauge] += @card.population_non
-      if session[:played_card].count == @cards.count
+
+      if session[:played_card].count >= @cards.count
         session[:played_card] = []
       end
       if session[:budget_gauge] >= 100
@@ -51,18 +79,36 @@ class CardsController < ApplicationController
         session[:employers_gauge] = 100
       end
       if session[:played_card].count == @cards.count || (session[:budget_gauge] <= 0 || session[:employers_gauge] <= 0 || session[:population_gauge] <= 0)
-        redirect_to  "/gameover"
+        @budget_gauge = session[:budget_gauge]
+        @employers_gauge = session[:employers_gauge]
+        @population_gauge = session[:population_gauge]
+        @score = session[:score]
+        {
+          budget_gauge: 50,
+          employers_gauge: 50,
+          population_gauge: 50,
+          played_card: [],
+          score: 0
+        }.each { |data, value| session[data] = value }
+
+        render 'static_pages/gameover'
       else
-      redirect_to action: "show", id: (@cards_ids - session[:played_card]).sample
-    end
+        next_card = (@cards_ids - session[:played_card]).sample
+        session[:played_card] << next_card
+        session[:score] += 1
+        redirect_to action: "show", id: next_card
+      end
   end
 
 
   # GET /cards/1
   # GET /cards/1.json
   def show
-    session[:played_card] << @card.id
-    session[:score] += 1
+    if !session[:played_card].last.nil? && session[:played_card].last != @card.id
+        redirect_to action: :show, id: session[:played_card].last
+    elsif session[:played_card].last.nil?
+        session[:played_card] << @card.id
+    end
   end
 
   # GET /cards/new
@@ -127,5 +173,15 @@ class CardsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def card_params
       params.require(:card).permit(:title,:desc, :budget_oui, :employers_oui, :population_oui,:budget_non, :employers_non, :population_non,:image)
+    end
+
+    def set_data
+        {
+            budget_gauge: 50,
+            employers_gauge: 50,
+            population_gauge: 50,
+            played_card: [],
+            score: 0
+        }.each { |data, value| session[data] = value unless session.key? data }
     end
 end

@@ -5,15 +5,15 @@
         <p class="bg-danger" id="notice"><%= notice %></p>
         <div class="gauge">
           <div class="icon budget text-center">
-            <p><%= session[:budget_gauge] %>%</p>
+            <p><%= @budget_gauge.nil? ? 50 : @budget_gauge %>%</p>
             <%= image_tag("eco.svg", :alt => "eco feed") %>
           </div>
           <div class="icon employer text-center">
-            <p><%= session[:employers_gauge] %>% </p>
+            <p><%= @employer_gauge.nil? ? 50 : @employer_gauge %>% </p>
             <%= image_tag("patronnat.svg", :alt => "patronnat feed") %>
           </div>
           <div class="icon population text-center">
-            <p><%= session[:population_gauge] %>% </p>
+            <p><%= @population_gauge.nil? ? 50 : @population_gauge %>% </p>
             <%= image_tag("peuple.svg", :alt => "peuple feed") %>
           </div>
         </div>
@@ -23,7 +23,7 @@
       <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
         <div class="card">
           <h1 class="title text-center">Game over !</h1>
-          <h3 class="text-center">Vous êtes resté au pouvoir : <%= session[:score] %> mois</h3>
+          <h3 class="text-center">Vous êtes resté au pouvoir : <%= @score.nil? ? 0 : @score %> mois</h3>
           <a href="https://goo.gl/forms/S0uj0H0mvLyYamRm1" class="btn btn-lg btn-primary btn-green center-block haut" target="_blank">Aidez-nous à améliorer Mandat !</a>
           <%= link_to 'Rejouer', root_path, class:"btn btn-lg btn-primary btn-green center-block bas" %>
         </div>

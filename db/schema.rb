@@ -32,15 +32,6 @@ ActiveRecord::Schema.define(version: 20170330212052) do
     t.integer  "population_non"
   end
 
-  create_table "games", force: :cascade do |t|
-    t.integer  "score"
-    t.integer  "budget_gauge"
-    t.integer  "employers_gauge"
-    t.integer  "population_gauge"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-  end
-
   create_table "identities", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "provider"
@@ -71,13 +62,8 @@ ActiveRecord::Schema.define(version: 20170330212052) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
-    t.string   "confirmation_token"
-    t.datetime "confirmed_at"
-    t.datetime "confirmation_sent_at"
-    t.string   "unconfirmed_email"
     t.string   "name"
     t.boolean  "admin",                  default: false
-    t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
